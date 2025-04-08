@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibriTXT - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/Libritxt.png') }}" alt="Logo Biblioteca Digital">
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Introdueix el títol o autor" onkeypress="buscarLlibre()">
+                <button onclick="buscarLlibre()">
+                    <img src="{{ url_for('static', filename='images/lupa.png') }}" alt="Cercar">
+                </button>
+            </div>
+            <div class="login">
+                {% if usuari %}
+                    <a href="{{ url_for('logout') }}">Tancar sessió</a>
+                    <p>{{ usuari }}</p>
+                {% else %}
+                    <a href="{{ url_for('login') }}">User/Admin</a>
+                    <p>Login</p>
+                {% endif %}
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Inici</a></li>
+                <li><a href="#cataleg">Catàleg</a></li>
+                <li><a href="{{ url_for('contacte') }}">Contacte</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="flash-{{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 LibriTXT. Tots els drets reservats.</p>
+            <div class="footer-links">
+                <a href="{{ url_for('politica_privacitat') }}">Política de Privacitat</a>
+                <a href="{{ url_for('contacte') }}">Contacte</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

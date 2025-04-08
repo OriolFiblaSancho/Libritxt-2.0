@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}{{ book.name }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="left-column">
+            <img src="{{ url_for('serve_cover', filename=book.cover) }}" alt="Portada de {{ book.name }}" class="book-cover">
+        </div>
+        <div class="right-column">
+            <h1>{{ book.name }}</h1>
+            <p class="author">{{ book.author }}</p>
+            <div class="rating">
+                {% if average_rating > 0 %}
+                    {% for i in range(5) %}
+                        {% if i < average_rating|round %}
+                            <span class="star">★</span>
+                        {% else %}
+                            <span class="star">☆</span>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <span>No ratings yet</span>
+                {% endif %}
+            </div>
+            <div class="buttons">
+                {% if usuari %}
+                    {% if borrower == usuari %}
+                        <form method="POST" action="{{ url_for('return_book_route', isbn=book.isbn) }}">
+                            <button type="submit" class="borrow-btn">TORNAR</button>
+                        </form>
+                    {% elif borrower %}
+                        <button class="borrow-btn" disabled>PRESTAT</button>
+                    {% else %}
+                        <form method="POST" action="{{ url_for('lend', isbn=book.isbn) }}">
+                            <button type="submit" class="borrow-btn">PRESTAR</button>
+                        </form>
+                    {% endif %}
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="borrow-btn">PRESTAR (Inicia sessió)</a>
+                    <button class="preview-btn">VISTA PRÈVIA</button>
+                {% endif %}
+            </div>
+            <p class="description">{{ book.description|default('Descripció no disponible') }}</p>
+            <div class="categories">
+                {% for category in book.categories %}
+                    <a href="#" class="category-link">{{ category }}</a>
+                {% endfor %}
+            </div>
+            <table class="metadata">
+                <tr>
+                    <td><strong>Editorial:</strong></td>
+                    <td>{{ book.editorial }}</td>
+                </tr>
+                <tr class="alt-row">
+                    <td><strong>Any de publicació:</strong></td>
+                    <td>{{ book.release_year }}</td>
+                </tr>
+                <tr>
+                    <td><strong>ISBN:</strong></td>
+                    <td>{{ book.isbn }}</td>
+                </tr>
+                <tr class="alt-row">
+                    <td><strong>Categoria:</strong></td>
+                    <td>{{ book.categories|join(', ') }}</td>
+                </tr>
+            </table>
+            <div class="reviews">
+                <h2>Ressenyes</h2>
+                {% if reviews %}
+                <div class="recommendation-bar">
+                    <h3>Recomanacions</h3>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: {{ recommendation_percentage }}%;"></div>
+                    </div>
+                    <p>{{ recommendation_percentage|round }}% recomanen aquest llibre</p>
+                </div>
+                    {% for review in reviews %}
+                        {% if review.type == 'numeric' %}
+                            <p><strong>Puntuació de {{ review.user }}:</strong> {{ review.rating }}/5</p>
+                        {% elif review.type == 'comment' %}
+                            <p><strong>Comentari de {{ review.user }}:</strong> {{ review.comment }}</p>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <p>No hi ha ressenyes encara</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

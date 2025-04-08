@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-container">
+            <img src="{{ url_for('static', filename='images/Libritxt.png') }}" alt="Logo Libritxt" class="login-logo">
+            <h2>Login</h2>
+            
+            <!-- Mostrar missatges flash -->
+            {% with missatges = get_flashed_messages(with_categories=true) %}
+                {% if missatges %}
+                    {% for categoria, missatge in missatges %}
+                        <p class="{{ categoria }}">{{ missatge }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <!-- Formulari -->
+            <form method="POST">
+                <label>Usuari:</label><br>
+                <input type="text" name="usuari" required><br>
+                <label>Contrasenya:</label><br>
+                <input type="password" name="contrasenya" required><br><br>
+                <input type="submit" value="Entrar">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Catàleg de Llibres{% endblock %}
+
+{% block content %}
+    <section id="cataleg">
+        <div class="catalog-container">    
+            <!-- Catàleg de llibres -->
+            <div class="main-content">
+                <h3>Catàleg de Llibres</h3>
+                <!-- Menú per ordenar -->
+                <div class="sort-options">
+                    <label for="sort">Ordenar per: </label>
+                    <select id="sort" onchange="window.location.href=this.value">
+                        <option value="{{ url_for('index', category=selected_category) }}" {% if sort == 'default' %}selected{% endif %}>Per defecte</option>
+                        <option value="{{ url_for('index', sort='name_asc', category=selected_category) }}" {% if sort == 'name_asc' %}selected{% endif %}>Nom (A-Z)</option>
+                        <option value="{{ url_for('index', sort='name_desc', category=selected_category) }}" {% if sort == 'name_desc' %}selected{% endif %}>Nom (Z-A)</option>
+                    </select>
+                </div>
+                <div id="llistat-llibres" class="book-grid">
+                    {% if books %}
+                        {% for book in books %}
+                            <div class="book-item">
+                                <a href="{{ url_for('book_details', isbn=book.isbn) }}">
+                                    <img src="{{ url_for('serve_cover', filename=book.cover) }}" alt="{{ book.name }}" class="book-cover">
+                                    <h3>{{ book.name }}</h3>
+                                    <p class="author">{{ book.author }}</p>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No hi ha llibres disponibles al catàleg.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

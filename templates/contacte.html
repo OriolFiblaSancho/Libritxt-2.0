@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacte - LibriTXT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contactes.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/Libritxt.png') }}" alt="Logo Biblioteca Digital">
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Introdueix el títol o autor">
+                <button onclick="buscarLlibre()">
+                    <img src="{{ url_for('static', filename='images/lupa.png') }}" alt="Cercar">
+                </button>
+            </div>
+            <div class="login">
+                {% if usuari %}
+                    <a href="{{ url_for('logout') }}">Tancar sessió</a>
+                    <p>{{ usuari }}</p>
+                {% else %}
+                    <a href="{{ url_for('login') }}">User/Admin</a>
+                    <p>Login</p>
+                {% endif %}
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Inici</a></li>
+                <li><a href="#cataleg">Catàleg</a></li>
+                <li><a href="{{ url_for('contacte') }}">Contacte</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="contact-page">
+            <h1>Contacte</h1>
+            <p>Si tens qualsevol dubte o necessites assistència, pots contactar-nos directament per correu electrònic o telèfon.</p>
+            
+            <h2>Informació de Contacte</h2>
+            <p>Correu electrònic: <a href="mailto:suport@libritxt.cat">suport@libritxt.cat</a></p>
+            <p>Telèfon: +34 977 123 456</p>
+            <p>Adreça: Carrer de la Llibertat, 123, 43870 Amposta, Tarragona</p>
+
+            <h2>Els nostres desenvolupadors</h2>
+            <p>Aquesta web ha estat desenvolupada per dos estudiants de DAW (Desenvolupament d'Aplicacions Web), CFGS, a l’Institut Montsià:</p>
+            <ul>
+                <li>Sergi Obiol - Estudiant de 1r curs de DAW</li>
+                <li>Roger Piñol - Estudiant de 1r curs de DAW</li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Biblioteca Digital. Tots els drets reservats.</p>
+            <div class="footer-links">
+                <a href="{{ url_for('politica_privacitat') }}">Política de Privacitat</a>
+                <a href="{{ url_for('contacte') }}">Contacte</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

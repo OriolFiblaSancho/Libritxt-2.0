@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacitat - LibriTXT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='politicaprivacitat.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/Libritxt.png') }}" alt="Logo Biblioteca Digital">
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Introdueix el títol o autor">
+                <button onclick="buscarLlibre()">
+                    <img src="{{ url_for('static', filename='images/lupa.png') }}" alt="Cercar">
+                </button>
+            </div>
+            <div class="login">
+                {% if usuari %}
+                    <a href="{{ url_for('logout') }}">Tancar sessió</a>
+                    <p>{{ usuari }}</p>
+                {% else %}
+                    <a href="{{ url_for('login') }}">User/Admin</a>
+                    <p>Login</p>
+                {% endif %}
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Inici</a></li>
+                <li><a href="#cataleg">Catàleg</a></li>
+                <li><a href="{{ url_for('contacte') }}">Contacte</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="privacy-policy">
+            <h1>Política de Privacitat</h1>
+            <p>Data d'entrada en vigor: 19 de març de 2025</p>
+            
+            <h2>1. Introducció</h2>
+            <p>A Biblioteca Digital LibriTXT, ens comprometem a protegir la privacitat dels nostres usuaris. Aquesta política explica com recollim, utilitzem i protegim la vostra informació personal quan utilitzeu el nostre lloc web.</p>
+
+            <h2>2. Informació que recollim</h2>
+            <p>Podem recollir la següent informació:</p>
+            <ul>
+                <li>Nom i cognoms</li>
+                <li>Adreça de correu electrònic</li>
+                <li>Historial de cerques i llibres consultats</li>
+                <li>Dades d'inici de sessió (usuari i contrasenya xifrada)</li>
+            </ul>
+
+            <h2>3. Ús de la informació</h2>
+            <p>Utilitzem les dades per:</p>
+            <ul>
+                <li>Gestionar el vostre compte</li>
+                <li>Personalitzar la vostra experiència de lectura</li>
+                <li>Enviar notificacions sobre novetats (si heu acceptat)</li>
+            </ul>
+
+            <h2>4. Protecció de dades</h2>
+            <p>Implementem mesures de seguretat com:</p>
+            <ul>
+                <li>Xifratge SSL per a les connexions</li>
+                <li>Emmagatzematge segur de contrasenyes</li>
+                <li>Accés restringit al personal autoritzat</li>
+            </ul>
+
+            <h2>5. Contacte</h2>
+            <p>Per a qualsevol dubte, podeu contactar-nos a: <a href="mailto:suport@blibritxt.cat">suport@libritxt.cat</a></p>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Biblioteca Digital. Tots els drets reservats.</p>
+            <div class="footer-links">
+                <a href="{{ url_for('politica_privacitat') }}">Política de Privacitat</a>
+                <a href="{{ url_for('contacte') }}">Contacte</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

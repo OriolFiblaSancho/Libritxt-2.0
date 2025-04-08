@@ -1,0 +1,324 @@
+00000|El Manifiesto Comunista|Karl Marx|Autobiografia,Filosofia Política|Alianza Editorial|1926|cover1.jpg|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam sem sed odio ullamcorper hendrerit. Proin a nunc non quam condimentum blandit. Proin pellentesque, velit ut efficitur cursus, ex nisl bibendum elit, at scelerisque orci arcu at erat. Aliquam erat volutpat. Proin finibus leo dapibus magna iaculis, non imperdiet nunc pretium. Integer et nibh nec nulla volutpat facilisis nec quis orci. Mauris euismod metus in sapien feugiat, sit amet condimentum justo pharetra. Vivamus ex nisi, sagittis sollicitudin semper nec, lacinia id arcu.
+00000|numeric|user1|2023-10-15 10:00|4
+00000|comment|user2|2023-10-15 12:00|Great book!
+00000|recommendation|user3|2023-10-15 14:00|Yes
+00000|recommendation|Clara|2025-03-20 09:30|Yes
+00000|recommendation|Marc|2025-03-21 14:20|Yes
+00000|recommendation|Anna|2025-03-22 11:00|No
+
+00001|El Principito|Antoine de Saint-Exupéry|Ficció infantil,Ficció juvenil|Catapulta|2022|cover2.jpg|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam sem sed odio ullamcorper hendrerit. Proin a nunc non quam condimentum blandit. Proin pellentesque, velit ut efficitur cursus, ex nisl bibendum elit, at scelerisque orci arcu at erat. Aliquam erat volutpat. Proin finibus leo dapibus magna iaculis, non imperdiet nunc pretium. Integer et nibh nec nulla volutpat facilisis nec quis orci. Mauris euismod metus in sapien feugiat, sit amet condimentum justo pharetra. Vivamus ex nisi, sagittis sollicitudin semper nec, lacinia id arcu.
+00001|numeric|Clara|2025-03-20 09:30|5
+00001|comment|Marc|2025-03-21 14:20|Una història tendra i plena de significat.
+00001|recommendation|Anna|2025-03-22 11:00|Yes
+00001|recommendation|Jordi|2025-03-19 16:45|Yes
+00001|recommendation|Laia|2025-03-18 10:15|No
+00001|recommendation|Pau|2025-03-23 08:00|No
+
+00002|El libro troll|El Rubius|Ficció juvenil,Humor|Martínez Roca|2014|cover3.jpg|¿Te atreves a jugar? Prepárate para un libro que no podrás leer de forma pasiva: deberás tomar decisiones, resolver retos, y enfrentarte a pruebas troll que te harán reír y desesperarte a partes iguales. Con un estilo gamberro y original, El Rubius ha creado una aventura interactiva llena de humor, sorpresas, y situaciones absurdas que desafían toda lógica. Ideal para fans del youtuber y para quienes buscan una lectura distinta y divertida.
+00002|numeric|Anna|2025-03-22 11:00|4
+00002|comment|Marc|2025-03-21 14:20|Una passada de llibre, molt divertit i original!
+00002|recommendation|Jordi|2025-03-19 16:45|Yes
+00002|recommendation|Laia|2025-03-18 10:15|Yes
+00002|recommendation|Pau|2025-03-23 08:00|No
+00002|recommendation|Sara|2025-03-17 13:30|No
+
+00003|El Senyor dels Anells: Les Dues Torres|J.R.R. Tolkien|Ficció fantàstica,Aventura|Minotauro|1954|cover4.jpg|La Comunitat s’ha trencat però la missió per destruir l’Anell Únic continua. Frodo i Sam avancen cap a Mordor, guiats per la misteriosa criatura Gollum, mentre Aragorn, Legolas i Gimli lluiten per la llibertat dels pobles de la Terra Mitjana. Enmig de batalles èpiques, traïcions i moments de gran esperança, les dues torres s’alcen com símbols del poder de Sauron i Saruman. El viatge continua i el destí de tots penja d’un fil.
+00003|numeric|Jordi|2025-03-19 16:45|5
+00003|comment|Laia|2025-03-18 10:15|Una aventura èpica que no decepciona.
+00003|recommendation|Anna|2025-03-22 11:00|Yes
+00003|recommendation|Pau|2025-03-23 08:00|Yes
+00003|recommendation|Sara|2025-03-17 13:30|Yes
+00003|recommendation|David|2025-03-16 19:00|Yes
+
+00004|La Guía del Mago Frugal|Brandon Sanderson|Ficció fantàstica,Humor|Nova|2024|cover5.jpg|¿Com sobreviure a la dura realitat de la Inglaterra medieval sent un mag amb pressupost limitat? En aquesta guia il·lustrada, Brandon Sanderson ofereix consells pràctics, trucs màgics low-cost i molt d’humor per afrontar monstres, reis i camperols desconfiats. Amb l'ajuda de Steve Argyle i la seva imaginació desbordant, aquesta obra ens transporta a un món on la màgia i l'enginy van de la mà. Ideal per a amants de la fantasia amb esperit aventurer i sentit de l'humor.
+00004|numeric|Jordi|2025-03-19 16:45|4
+00004|comment|Laia|2025-03-18 10:15|Divertit i ple d'idees originals!
+00004|recommendation|Pau|2025-03-23 08:00|Yes
+00004|recommendation|Sara|2025-03-17 13:30|Yes
+00004|recommendation|David|2025-03-16 19:00|Yes
+00004|recommendation|Eva|2025-03-15 12:00|No
+
+00005|La Biblia Satánica|Anton Szandor LaVey|Filosofia,Esoterisme|Ediciones Obelisco|1969|cover6.jpg|Una obra polèmica i revolucionària que recull els fonaments del satanisme modern. Anton LaVey presenta una filosofia basada en l’individualisme, el pensament crític i l’acceptació dels instints humans com a font de poder i llibertat. A través de textos rituals, reflexions i aforismes, aquesta bíblia alternativa desafia la moral tradicional i ofereix una nova manera d’entendre l’espiritualitat i l’existència humana.
+00005|numeric|Pau|2025-03-23 08:00|3
+00005|comment|Laia|2025-03-18 10:15|Interessant però una mica intens per al meu gust.
+00005|recommendation|Sara|2025-03-17 13:30|Yes
+00005|recommendation|David|2025-03-16 19:00|Yes
+00005|recommendation|Eva|2025-03-15 12:00|No
+00005|recommendation|Martina|2025-03-20 15:00|Yes
+
+00006|La chica del tren|Paula Hawkins|Ficció, Thriller|Editorial Planeta|2015|cover7.jpg|Un thriller psicològic absorbent que et mantindrà a la vora del seient. Rachel, una dona atrapada en la seva pròpia rutina i els seus problemes personals, observa cada dia una parella aparentment perfecta des del tren. Quan la dona d’aquesta parella desapareix misteriosament, Rachel es veu immersa en una xarxa de secrets, mentides i perills que la portaran a qüestionar-se tot el que creia saber. Una història plena de suspens, girs inesperats i una reflexió profunda sobre la memòria i la veritat.
+00006|numeric|Sara|2025-03-17 13:30|4
+00006|comment|David|2025-03-16 19:00|Un thriller que et manté enganxat.
+00006|recommendation|Pau|2025-03-23 08:00|Yes
+00006|recommendation|Eva|2025-03-15 12:00|Yes
+00006|recommendation|Martina|2025-03-20 15:00|Yes
+00006|recommendation|Alex|2025-03-21 17:30|Yes
+
+00007|Una tierra prometida|Barack Obama|Biografia, Política|Debate|2020|cover8.jpg|Un relat íntim i profundament inspirador sobre el camí de Barack Obama cap a la presidència dels Estats Units. En aquesta memòria, Obama comparteix les seves experiències personals, els reptes polítics i els moments clau del seu primer mandat, des de la crisi econòmica fins a la reforma sanitària. Amb una narrativa honesta i reflexiva, el llibre explora el poder de la democràcia, les divisions socials i la seva visió per a un futur millor, oferint una mirada única al lideratge i a l’esperança en temps difícils.
+00007|numeric|Sara|2025-03-17 13:30|5
+00007|comment|David|2025-03-16 19:00|Inspirador i molt ben escrit.
+00007|recommendation|Eva|2025-03-15 12:00|Yes
+00007|recommendation|Martina|2025-03-20 15:00|Yes
+00007|recommendation|Alex|2025-03-21 17:30|Yes
+00007|recommendation|Nil|2025-03-22 09:45|Yes
+
+00008|La sociedad industrial y su futuro|Theodore Kaczynski|Ciències Socials, Filosofia|Ecoediciones|1995|cover9.jpg|Un manifest controvertit que analitza els efectes negatius de la industrialització i la tecnologia en la societat moderna. Theodore Kaczynski argumenta que el progrés tecnològic ha erosionat la llibertat individual, ha destruït les comunitats humanes i ha generat un sistema opressiu que aliena les persones. A través d’una crítica radical, proposa un retorn a una vida més simple i autosuficient, qüestionant els valors de la civilització industrial i advertint sobre el seu col·lapse inevitable si no es canvia de rumb.
+00008|numeric|Eva|2025-03-15 12:00|3
+00008|comment|David|2025-03-16 19:00|Una crítica molt profunda, però pot ser polèmic.
+00008|recommendation|Martina|2025-03-20 15:00|Yes
+00008|recommendation|Alex|2025-03-21 17:30|No
+00008|recommendation|Nil|2025-03-22 09:45|Yes
+00008|recommendation|Gemma|2025-03-19 11:20|Yes
+
+00009|El arte de la guerra|Sun Tzu|Estratègia, Filosofia|Alianza Editorial|2010|cover10.jpg|Un clàssic atemporal sobre l’estratègia i la tàctica militar que ha transcendit segles i cultures. Sun Tzu ofereix principis profunds i universals per a la gestió de conflictes, la planificació i el lideratge, aplicables tant a la guerra com a la vida quotidiana o els negocis. A través de màximes com "coneix el teu enemic i coneix-te a tu mateix", aquest llibre explora l’art de vèncer sense lluitar, posant èmfasi en la intel·ligència, la preparació i l’adaptabilitat com a claus per a l’èxit en qualsevol empresa.
+00009|numeric|Martina|2025-03-20 15:00|5
+00009|comment|Alex|2025-03-21 17:30|Un clàssic imprescindible per a qualsevol estratega.
+00009|recommendation|Eva|2025-03-15 12:00|Yes
+00009|recommendation|Nil|2025-03-22 09:45|Yes
+00009|recommendation|Gemma|2025-03-19 11:20|No
+00009|recommendation|Roger|2025-03-18 14:50|Yes
+
+00010|SrSapo|Nemalidl|Ficció, Humor|La Foradada|2024|cover11.jpg|Sr. Sapo és una novel·la infantil divertida sobre un granota que vol ser escriptor i participar en un concurs literari del bosc. Amb els seus amics —una libèl·lula, un peixet i un cranc—, viu aventures còmiques buscant inspiració, com fugir d’un ànec enfadat o conèixer una planta carnívora amistosa. Al final, Sr. Sapo aprèn que les millors històries neixen de l’amistat i les experiències compartides. Una història plena d’humor i valors, premiada amb el "Best Frog Award".
+00010|numeric|Puticornio|2023-10-15 10:00|5
+00010|comment|Sergi|2025-03-15 15:50|M'ha canviat la vida, lectura obligatòria per a qualsevol amant de la natura
+00010|comment|Franc|2025-03-15 15:50|good nitgt
+00010|comment|Xexii|2025-03-15 15:50|Estufin
+00010|comment|Judit|2025-03-15 15:50|Tikismonkis
+00010|recommendation|user3|2023-10-15 14:00|Yes
+00010|recommendation|Carla|2025-03-23 10:30|Yes
+00010|recommendation|Oriol|2025-03-17 18:00|Yes
+00010|recommendation|Núria|2025-03-16 20:15|Yes
+
+00011|Berserk (Vol. 1)|Kentaro Miura|Manga, Fantasia fosca|Panini Comics|1989|cover12.jpg|Un manga èpic i fosc que segueix en Guts, un guerrer solitari conegut com l’Espadatxin Negre, en un món medieval ple de violència i forces demoníaques. Amb la seva espasa gegant i un passat marcat per la traïció, Guts busca venjança contra en Griffith, el líder de la Banda del Falcó, mentre lluita contra criatures monstruoses i el seu propi destí tràgic. Una història crua sobre la supervivència, l’amistat i el preu de l’ambició.
+00011|numeric|Martina|2025-03-20 15:00|4
+00011|comment|Alex|2025-03-21 17:30|Un manga fosc i intens, molt recomanable.
+00011|recommendation|Nil|2025-03-22 09:45|Yes
+00011|recommendation|Gemma|2025-03-19 11:20|Yes
+00011|recommendation|Roger|2025-03-18 14:50|Yes
+00011|recommendation|Carla|2025-03-23 10:30|No
+
+00012|The Amazing Spider-Man #316|David Michelinie|Còmic, Superherois|Marvel Comics|1989|cover13.jpg|Un número icònic de The Amazing Spider-Man on en Venom, un dels enemics més temuts de l’Home Aranya, fa el seu retorn triomfal. En aquesta història, Eddie Brock, unit al simbiont Venom, enfronta a Spider-Man en una batalla brutal plena d’acció i tensió. Amb un Spider-Man debilitat i un Venom més perillós que mai, el còmic explora la rivalitat intensa entre els dos personatges, posant a prova el coratge i la resistència de l’heroi aràcnid en una lluita per la supervivència.
+00012|numeric|Nil|2025-03-22 09:45|5
+00012|comment|Alex|2025-03-21 17:30|Un clàssic dels còmics, Venom és brutal!
+00012|recommendation|Gemma|2025-03-19 11:20|Yes
+00012|recommendation|Roger|2025-03-18 14:50|Yes
+00012|recommendation|Carla|2025-03-23 10:30|Yes
+00012|recommendation|Oriol|2025-03-17 18:00|Yes
+
+00013|Dune|Frank Herbert|Ciència ficció|DEBOLSILLO|2015|cover14.jpg|Una èpica de ciència ficció ambientada en el planeta desèrtic d'Arrakis, on el jove Paul Atreides es veu embolicat en una lluita pel control de l'"espècia", una substància valuosa que allarga la vida i amplia la consciència. Una història de política, religió i supervivència.
+00013|numeric|Gemma|2025-03-19 11:20|5
+00013|comment|Roger|2025-03-18 14:50|Una obra mestra de la ciència ficció.
+00013|recommendation|Nil|2025-03-22 09:45|Yes
+00013|recommendation|Carla|2025-03-23 10:30|Yes
+00013|recommendation|Oriol|2025-03-17 18:00|Yes
+00013|recommendation|Núria|2025-03-16 20:15|Yes
+
+00014|El monje que vendió su Ferrari|Robin Sharma|Autoajuda, Espiritualitat|Debolsillo Clave|1997|cover15.jpg|Una faula espiritual que narra la història d'un advocat d'èxit que, després d'una crisi personal, ven el seu Ferrari i emprèn un viatge a l'Himàlaia a la recerca de la felicitat i la saviesa. Un llibre inspirador sobre com trobar l'equilibri i el propòsit a la vida.
+00014|numeric|Gemma|2025-03-19 11:20|5
+00014|comment|Roger|2025-03-18 14:50|Un llibre que inspira a viure millor.
+00014|recommendation|Carla|2025-03-23 10:30|Yes
+00014|recommendation|Oriol|2025-03-17 18:00|Yes
+00014|recommendation|Núria|2025-03-16 20:15|Yes
+00014|recommendation|Pol|2025-03-15 16:00|Yes
+
+00015|Viajes Astrales y Sueños Lúcidos|Kensho|Espiritualitat, Autoajuda|Obelisco|2018|cover16.jpg|Una guia pràctica per explorar el pla astral i dominar els somnis lúcids. Aquest llibre ofereix tècniques i consells per a aquells que volen experimentar viatges astrals i aprofitar el poder dels somnis per al creixement personal i espiritual.
+00015|numeric|Carla|2025-03-23 10:30|4
+00015|comment|Roger|2025-03-18 14:50|Una guia molt útil per explorar els somnis lúcids.
+00015|recommendation|Oriol|2025-03-17 18:00|Yes
+00015|recommendation|Núria|2025-03-16 20:15|Yes
+00015|recommendation|Pol|2025-03-15 16:00|Yes
+00015|recommendation|Irene|2025-03-20 12:00|No
+
+00016|Hàbits atòmics|James Clear|Autoajuda, Desenvolupament personal|Ara Llibres|2019|cover17.jpg|Un llibre transformador que explora com els petits canvis poden generar resultats extraordinaris. James Clear ofereix una guia pràctica per construir hàbits positius i trencar els negatius, amb estratègies basades en la ciència del comportament.
+00016|numeric|Oriol|2025-03-17 18:00|5
+00016|comment|Núria|2025-03-16 20:15|Un llibre pràctic i transformador.
+00016|recommendation|Carla|2025-03-23 10:30|Yes
+00016|recommendation|Pol|2025-03-15 16:00|Yes
+00016|recommendation|Irene|2025-03-20 12:00|Yes
+00016|recommendation|Arnau|2025-03-21 13:40|Yes
+
+00017|El Código Da Vinci|Dan Brown|Ficció, Misteri|Planeta|2003|cover18.jpg|Un thriller apassionant que barreja misteris històrics, simbologia i intriga. El professor Robert Langdon es veu immers en una investigació perillosa sobre els secrets del Priorat de Sion, el Sant Grial i la veritat sobre Jesús de Natzaret. Amb una trama complexa i girs inesperats, el llibre ens porta a través de París, Londres i altres indrets plens de simbolisme i misteri.
+00017|numeric|Oriol|2025-03-17 18:00|4
+00017|comment|Núria|2025-03-16 20:15|Un thriller ple d'intriga i misteri.
+00017|recommendation|Pol|2025-03-15 16:00|Yes
+00017|recommendation|Irene|2025-03-20 12:00|Yes
+00017|recommendation|Arnau|2025-03-21 13:40|Yes
+00017|recommendation|Mar|2025-03-22 15:20|Yes
+
+00018|Ales de sang|Rebecca Yarros|Fantasia, Romàntic|Columna|2023|cover19.jpg|Una novel·la de fantasia èpica que segueix la Violet Sorrengail, una jove que ha d'entrenar-se per convertir-se en genet de dracs en un món ple de perills i intrigues. Amb una barreja d'acció, romanç i màgia, aquest llibre captiva amb la seva història addictiva.
+00018|numeric|Pol|2025-03-15 16:00|5
+00018|comment|Núria|2025-03-16 20:15|Una història captivadora, no podia parar de llegir!
+00018|recommendation|Irene|2025-03-20 12:00|Yes
+00018|recommendation|Arnau|2025-03-21 13:40|Yes
+00018|recommendation|Mar|2025-03-22 15:20|Yes
+00018|recommendation|Guillem|2025-03-19 09:00|Yes
+
+00019|Muchas vidas, muchos maestros|Brian Weiss|Espiritualitat, Autoajuda|Ediciones B|1988|cover20.jpg|Un llibre fascinant que explora la teràpia de regressió a vides passades. Brian Weiss, un psiquiatre reconegut, comparteix la història real d'una pacient que, sota hipnosi, recorda vides anteriors, canviant per sempre la seva visió sobre la vida i la mort.
+00019|numeric|Irene|2025-03-20 12:00|5
+00019|comment|Arnau|2025-03-21 13:40|Un llibre que obre la ment a noves perspectives.
+00019|recommendation|Pol|2025-03-15 16:00|Yes
+00019|recommendation|Mar|2025-03-22 15:20|Yes
+00019|recommendation|Guillem|2025-03-19 09:00|Yes
+00019|recommendation|Alba|2025-03-18 17:00|Yes
+
+00020|Fundación|Isaac Asimov|Ciència ficció|Debolsillo|1951|cover21.jpg|Una obra mestra de la ciència ficció que explora el futur de la humanitat a través de la psico-història, una ciència que prediu el comportament de les masses. Hari Seldon, el seu creador, estableix la Fundació per preservar el coneixement i reduir l'impacte d'una imminent era de barbàrie galàctica. Una història de política, ciència i supervivència a gran escala.
+00020|numeric|Irene|2025-03-20 12:00|5
+00020|comment|Arnau|2025-03-21 13:40|Una obra mestra de la ciència ficció.
+00020|recommendation|Mar|2025-03-22 15:20|Yes
+00020|recommendation|Guillem|2025-03-19 09:00|Yes
+00020|recommendation|Alba|2025-03-18 17:00|Yes
+00020|recommendation|Ferran|2025-03-23 11:00|Yes
+
+00021|El trono de cristal|Sarah J. Maas|Fantasia, Romàntic|Alfaguara|2012|cover22.jpg|Una jove assassina, Celaena Sardothien, és alliberada de la presó per competir en un torneig mortal que decidirà el nou campió del rei. En un regne ple de màgia prohibida, intrigues i perills, Celaena haurà de lluitar per la seva llibertat mentre descobreix secrets foscos sobre el seu passat. Una barreja de fantasia èpica, acció i romanç.
+00021|numeric|Mar|2025-03-22 15:20|5
+00021|comment|Arnau|2025-03-21 13:40|Celaena és un personatge increïble, molt recomanable.
+00021|recommendation|Guillem|2025-03-19 09:00|Yes
+00021|recommendation|Alba|2025-03-18 17:00|Yes
+00021|recommendation|Ferran|2025-03-23 11:00|Yes
+00021|recommendation|Lucia|2025-03-17 14:30|Yes
+
+00022|El poder del ahora|Eckhart Tolle|Espiritualitat, Autoajuda|Gaia Ediciones|1997|cover23.jpg|Un llibre transformador que ens ensenya a viure plenament en el moment present. Eckhart Tolle explora com deixar anar els pensaments negatius i l'ego per trobar la pau interior i la veritable essència de l'ésser. Una guia espiritual per a aquells que busquen desvetllar-se a una vida més conscient i plena.
+00022|numeric|Guillem|2025-03-19 09:00|4
+00022|comment|Alba|2025-03-18 17:00|Un llibre que et fa reflexionar profundament.
+00022|recommendation|Mar|2025-03-22 15:20|Yes
+00022|recommendation|Ferran|2025-03-23 11:00|Yes
+00022|recommendation|Lucia|2025-03-17 14:30|Yes
+00022|recommendation|Joan|2025-03-16 19:45|Yes
+
+00023|El paciente|Juan Gómez-Jurado|Ficció, Thriller|Ediciones B|2014|cover24.jpg|Un thriller intens que segueix un neurocirurgià que rep una amenaça terrible: si no assassina un pacient, la seva filla serà assassinada. Amb només 63 hores per decidir, el doctor es veu atrapat en una cursa contra el temps plena de secrets, dilemes morals i girs inesperats que et mantindran enganxat fins a l'última pàgina.
+00023|numeric|Guillem|2025-03-19 09:00|4
+00023|comment|Alba|2025-03-18 17:00|Un thriller molt intens, m'ha encantat.
+00023|recommendation|Ferran|2025-03-23 11:00|Yes
+00023|recommendation|Lucia|2025-03-17 14:30|Yes
+00023|recommendation|Joan|2025-03-16 19:45|Yes
+00023|recommendation|Emma|2025-03-15 10:00|Yes
+
+00024|Diario de Greg: Un pringao total|Jeff Kinney|Ficció juvenil, Humor|Molino|2007|cover25.jpg|Les desventures de Greg Heffley, un noi de secundària que intenta sobreviure a l'escola, la família i els amics amb el seu estil únic i maldestre. A través del seu diari, ple de dibuixos i situacions còmiques, Greg ens explica les seves peripècies per ser popular mentre tot sembla anar-li malament. Una història divertida i entranyable per a joves i adults.
+00024|numeric|Ferran|2025-03-23 11:00|5
+00024|comment|Alba|2025-03-18 17:00|Greg és molt divertit, perfecte per a nens i adults!
+00024|recommendation|Lucia|2025-03-17 14:30|Yes
+00024|recommendation|Joan|2025-03-16 19:45|Yes
+00024|recommendation|Emma|2025-03-15 10:00|Yes
+00024|recommendation|Victor|2025-03-20 16:00|Yes
+
+00025|Hyperion|Dan Simmons|Ciència ficció|Ediciones B|1989|cover26.jpg|Una obra mestra de la ciència ficció que combina elements de pelegrinatge amb històries interconnectades. Set pelegrins viatgen al planeta Hyperion per trobar-se amb el Shrike, una criatura temuda, mentre comparteixen les seves històries personals. Una narrativa rica que explora la religió, la tecnologia i el destí de la humanitat.
+00025|numeric|Lucia|2025-03-17 14:30|5
+00025|comment|Joan|2025-03-16 19:45|Una obra complexa i fascinant.
+00025|recommendation|Ferran|2025-03-23 11:00|Yes
+00025|recommendation|Emma|2025-03-15 10:00|Yes
+00025|recommendation|Victor|2025-03-20 16:00|Yes
+00025|recommendation|Elena|2025-03-21 12:30|Yes
+
+00026|La corte de los espejos|Concepcion Perea|Fantasia, Aventura|Fantascy|2013|cover27.jpg|Una novel·la de fantasia fosca ambientada a Terra Ignota, un món ple de criatures màgiques i intrigues. La Nicasia, una fada enginyera, es veu atrapada en una xarxa de secrets i traïcions quan un assassinat sacseja la cort. Amb un estil ple de màgia i misteri, aquest llibre captiva amb els seus personatges complexos i un món ricament construït.
+00026|numeric|Lucia|2025-03-17 14:30|5
+00026|comment|Joan|2025-03-16 19:45|Un món màgic molt ben construït.
+00026|recommendation|Emma|2025-03-15 10:00|Yes
+00026|recommendation|Victor|2025-03-20 16:00|Yes
+00026|recommendation|Elena|2025-03-21 12:30|Yes
+00026|recommendation|Adrià|2025-03-22 08:15|Yes
+
+00027|Los cuatro acuerdos|Miguel Ruiz|Espiritualitat, Autoajuda|Urano|1997|cover28.jpg|Un llibre profundament inspirador basat en la saviesa tolteca. Miguel Ruiz presenta quatre principis per viure una vida plena i lliure: ser impecable amb les paraules, no prendre res personalment, no fer suposicions i fer sempre el millor possible. Una guia per transformar la manera de pensar i trobar la felicitat autèntica.
+00027|numeric|Emma|2025-03-15 10:00|4
+00027|comment|Joan|2025-03-16 19:45|Un llibre que et fa reflexionar molt sobre la vida.
+00027|recommendation|Victor|2025-03-20 16:00|Yes
+00027|recommendation|Elena|2025-03-21 12:30|Yes
+00027|recommendation|Adrià|2025-03-22 08:15|Yes
+00027|recommendation|Marina|2025-03-19 13:00|Yes
+
+00028|El silencio de los corderos|Thomas Harris|Ficció, Thriller|Hannibal Lecter|1988|cover29.jpg|Un thriller psicològic icònic que segueix la Clarice Starling, una jove agent de l'FBI, mentre busca l'ajuda del brillant però perillós Hannibal Lecter per atrapar un assassí en sèrie conegut com Buffalo Bill. Una història plena de tensió, jocs mentals i un retrat inquietant de la ment criminal.
+00028|numeric|Victor|2025-03-20 16:00|5
+00028|comment|Elena|2025-03-21 12:30|Hannibal Lecter és terroríficament fascinant.
+00028|recommendation|Emma|2025-03-15 10:00|Yes
+00028|recommendation|Adrià|2025-03-22 08:15|Yes
+00028|recommendation|Marina|2025-03-19 13:00|Yes
+00028|recommendation|Albert|2025-03-18 15:30|Yes
+
+00029|Las ventajas de ser un marginado|Stephen Chbosky|Ficció juvenil, Drama|Alfaguara|1999|cover30.jpg|Una novel·la commovedora sobre el pas a l'edat adulta. A través de cartes, Charlie, un adolescent tímid i sensible, explica les seves experiències al primer any d'institut, on troba amistat, amor i també els reptes de la depressió i el trauma. Una història tendra i honesta sobre créixer i trobar el teu lloc al món.
+00029|numeric|Victor|2025-03-20 16:00|4
+00029|comment|Elena|2025-03-21 12:30|Una història molt emotiva i real.
+00029|recommendation|Adrià|2025-03-22 08:15|Yes
+00029|recommendation|Marina|2025-03-19 13:00|Yes
+00029|recommendation|Albert|2025-03-18 15:30|Yes
+00029|recommendation|Júlia|2025-03-23 09:00|Yes
+
+00030|Neuromante|William Gibson|Ciència ficció|Minotauro|1984|cover31.jpg|Una novel·la pionera del gènere ciberpunk que segueix en Case, un hacker que és contractat per infiltrar-se en una intel·ligència artificial anomenada Wintermute. Ambientada en un futur distòpic ple de tecnologia, megacorporacions i ciberespai, aquesta història explora els límits de la consciència i la humanitat en un món hiperconnectat.
+00030|numeric|Adrià|2025-03-22 08:15|5
+00030|comment|Elena|2025-03-21 12:30|Una obra mestra del ciberpunk, molt recomanable.
+00030|recommendation|Marina|2025-03-19 13:00|Yes
+00030|recommendation|Albert|2025-03-18 15:30|Yes
+00030|recommendation|Júlia|2025-03-23 09:00|Yes
+00030|recommendation|Miquel|2025-03-17 11:00|Yes
+
+00031|El nombre del viento|Patrick Rothfuss|Fantasia, Aventura|Plaza & Janés|2007|cover32.jpg|La primera part de la Crònica de l'Assassí de Reis explica la història de Kvothe, un jove prodigi que es converteix en una llegenda viva. Des dels seus humils inicis com a membre d'una companyia de teatre fins a la seva formació a la Universitat de màgia, aquesta novel·la combina màgia, música i misteri en una narrativa captivadora.
+00031|numeric|Marina|2025-03-19 13:00|5
+00031|comment|Albert|2025-03-18 15:30|Una de les millors fantasies que he llegit.
+00031|recommendation|Adrià|2025-03-22 08:15|Yes
+00031|recommendation|Júlia|2025-03-23 09:00|Yes
+00031|recommendation|Miquel|2025-03-17 11:00|Yes
+00031|recommendation|Sílvia|2025-03-16 18:20|Yes
+
+00032|El sueño de Sophia|Eduardo H. Visconti|Espiritualitat, Autoajuda|Obelisco|2012|cover33.jpg|Una obra que combina espiritualitat i reflexió personal a través de la història de Sophia, una dona que emprèn un viatge interior per descobrir el sentit de la seva existència. Amb un estil poètic i profund, aquest llibre ofereix ensenyaments sobre l'amor, la consciència i la connexió amb l'univers.
+00032|numeric|Marina|2025-03-19 13:00|5
+00032|comment|Albert|2025-03-18 15:30|Un viatge espiritual molt bonic.
+00032|recommendation|Júlia|2025-03-23 09:00|Yes
+00032|recommendation|Miquel|2025-03-17 11:00|Yes
+00032|recommendation|Sílvia|2025-03-16 18:20|Yes
+00032|recommendation|Eric|2025-03-15 14:00|Yes
+
+00033|Las hijas de la criada|Sonsoles Ónega|Ficció històrica, Drama|Planeta|2023|cover34.jpg|Una novel·la històrica que explora els secrets i les lluites d'una família a la Galícia de principis del segle XX. Dues germanes, filles d'una criada, lluiten per trobar el seu lloc en un món marcat per les desigualtats socials i els drames familiars. Una història emocionant sobre l'amor, la venjança i la resiliència, guanyadora del Premi Planeta 2023.
+00033|numeric|Júlia|2025-03-23 09:00|5
+00033|comment|Albert|2025-03-18 15:30|Una novel·la molt emotiva, m'ha arribat al cor.
+00033|recommendation|Miquel|2025-03-17 11:00|Yes
+00033|recommendation|Sílvia|2025-03-16 18:20|Yes
+00033|recommendation|Eric|2025-03-15 14:00|Yes
+00033|recommendation|Montse|2025-03-20 10:30|Yes
+
+00034|Hachiko: El perro que esperaba|Lluís Prats|Ficció juvenil, Drama|La Galera|2015|cover35.jpg|Una emotiva història basada en la vida real de Hachiko, un gos japonès que es va fer famós per esperar cada dia el seu amo a l'estació de tren, fins i tot després de la seva mort. Aquesta novel·la, escrita per a joves lectors, explora temes de lleialtat, amor incondicional i la connexió especial entre humans i animals.
+00034|numeric|Miquel|2025-03-17 11:00|5
+00034|comment|Sílvia|2025-03-16 18:20|Una història que et fa plorar d'emoció.
+00034|recommendation|Júlia|2025-03-23 09:00|Yes
+00034|recommendation|Eric|2025-03-15 14:00|Yes
+00034|recommendation|Montse|2025-03-20 10:30|Yes
+00034|recommendation|Daniel|2025-03-21 16:00|Yes
+
+00035|Clean Code|Robert C. Martin|Tecnologia, Programació|Prentice Hall|2008|cover36.jpg|Un manual essencial per a desenvolupadors de software que volen escriure codi net, llegible i eficient. Robert C. Martin, conegut com "Uncle Bob", ofereix principis, patrons i pràctiques per millorar la qualitat del codi, amb exemples pràctics i consells per a una programació àgil i sostenible.
+00035|numeric|Miquel|2025-03-17 11:00|5
+00035|comment|Sílvia|2025-03-16 18:20|Imprescindible per a qualsevol programador.
+00035|recommendation|Eric|2025-03-15 14:00|Yes
+00035|recommendation|Montse|2025-03-20 10:30|No
+00035|recommendation|Daniel|2025-03-21 16:00|Yes
+00035|recommendation|Clara|2025-03-22 09:00|Yes
+00035|recommendation|Clara|2025-03-22 09:00|Yes
+
+
+00036|1984|George Orwell|Ficció distòpica, Ciència ficció|Destino|1949|cover37.jpg|Una novel·la distòpica clàssica que presenta un món sota un règim totalitari on el Gran Germà ho controla tot. Winston Smith, el protagonista, lluita per mantenir la seva humanitat en una societat on la llibertat i la veritat han desaparegut. Una reflexió poderosa sobre el poder, la vigilància i la resistència.
+00036|numeric|Eric|2025-03-15 14:00|5
+00036|comment|Sílvia|2025-03-16 18:20|Un clàssic que no perd vigència, impressionant.
+00036|recommendation|Montse|2025-03-20 10:30|Yes
+00036|recommendation|Daniel|2025-03-21 16:00|No
+00036|recommendation|Clara|2025-03-22 09:00|No
+00036|recommendation|Marc|2025-03-19 12:00|No
+
+00037|La brújula dorada|Philip Pullman|Fantasia, Aventura|Suma de Letras|1995|cover38.jpg|El primer llibre de la trilogia *La materia oscura* segueix la Lyra Belacqua, una nena valenta que viu en un món on les ànimes prenen forma d'animals. Quan el seu millor amic desapareix, la Lyra emprèn un viatge ple de màgia, misteris i perills, descobrint secrets sobre el Pols i el seu propi destí.
+00037|numeric|Montse|2025-03-20 10:30|4
+00037|comment|Daniel|2025-03-21 16:00|Una aventura màgica per a totes les edats.
+00037|recommendation|Eric|2025-03-15 14:00|Yes
+00037|recommendation|Clara|2025-03-22 09:00|Yes
+00037|recommendation|Marc|2025-03-19 12:00|Yes
+00037|recommendation|Anna|2025-03-18 15:00|No
+
+00038|El arte de la felicidad|Dalai Lama y Howard Cutler|Autoajuda, Espiritualitat|Grijalbo|1998|cover39.jpg|Un llibre profundament inspirador que combina la saviesa del Dalai Lama amb les perspectives d'un psiquiatre occidental. A través de converses, el Dalai Lama comparteix ensenyaments sobre com trobar la felicitat autèntica, superar el patiment i viure una vida plena, independentment de les circumstàncies.
+00038|numeric|Montse|2025-03-20 10:30|4
+00038|comment|Daniel|2025-03-21 16:00|Un llibre ple de saviesa i esperança.
+00038|recommendation|Clara|2025-03-22 09:00|Yes
+00038|recommendation|Marc|2025-03-19 12:00|Yes
+00038|recommendation|Anna|2025-03-18 15:00|Yes
+00038|recommendation|Jordi|2025-03-17 14:00|No
+
+00039|El psicoanalista|John Katzenbach|Thriller, Ficció|Ediciones B|2002|cover40.jpg|Un thriller psicològic intens on el doctor Frederick Starks, un psicoanalista, rep una amenaça anònima que li dona 15 dies per descobrir qui el vol destruir, o la seva vida serà arruïnada. Una cursa contra el temps plena de jocs mentals, venjances i girs inesperats.
+00039|numeric|Clara|2025-03-22 09:00|5
+00039|comment|Daniel|2025-03-21 16:00|Un thriller que et manté enganxat fins al final!
+00039|recommendation|Marc|2025-03-19 12:00|Yes
+00039|recommendation|Anna|2025-03-18 15:00|Yes
+00039|recommendation|Jordi|2025-03-17 14:00|Yes
+00039|recommendation|Laia|2025-03-16 13:00|Yes

@@ -1,0 +1,2 @@
+user,user,reader
+admin,admin,admin
