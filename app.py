@@ -25,27 +25,31 @@ mongo_client = MongoClient('mongodb://localhost:27016/')
 mongo_db = mongo_client['biblioteca']
 coments_collection = mongo_db['comentaris']
 historial_collection = mongo_db['historial_prestecs']
-images_collection = mongo_db['imatges']
 text_collection = mongo_db['text_llibre']
 
 def load_users():
     users = {}
     conn = get_mysql_connection()
     try:
-        with open('data/users.txt', 'r', encoding='utf-8') as f:
-            for line in f:
-                fields = line.strip().split(',')
-                if len(fields) == 3:
-                    username, password, role = fields
-                    user_id = username
-                    password
-                    if role == 'admin':
-                        user = Admin(user_id, username, password)
-                    else:
-                        user = Reader(user_id, username, password)
-                    users[username] = user
-    except FileNotFoundError:
-        print("users.txt not found; no users loaded.")
+        with conn.cursor() as cursor:
+            sql = "SELECT id, nom, email, pass, tipus"
+            cursor.execute(sql)
+            results = cursor.fetchall()
+            
+            for user_data in results:
+                user_id = user_data['id']
+                username = user_data['nom']
+                email = user_data['email']
+                password = user_data['pass']
+                role = user_data['tipus']
+                
+                if role == 'admin':
+                    user = Admin(user_id, username, password)
+                else:
+                    user = Reader(user_id, username, password)
+                users[username] = user
+    finally:
+        conn.close()
     return users
 
 # Load users at startup
@@ -53,24 +57,42 @@ users = load_users()
 
 def get_all_books():
     books = []
+    conn = get_mysql_connection()
     try:
-        with open('data/books.txt', 'r', encoding='utf-8') as f:
-            for line in f:
-                fields = line.strip().split('|')
-                if len(fields) == 8:
-                    categories = fields[3].split(',') if fields[3] else []
-                    books.append({
-                        'isbn': fields[0],
-                        'name': fields[1],
-                        'author': fields[2],
-                        'categories': categories,
-                        'editorial': fields[4],
-                        'release_year': fields[5],
-                        'cover': fields[6],
-                        'description': fields[7]
-                    })
-    except FileNotFoundError:
-        pass
+        with conn.cursor() as cursor:
+            sql = "SELECT id, titol, autor, categoria, any_publicacio"
+            cursor.execute(sql)
+            results = cursor.fetchall()
+
+            for book_data in results:
+                book_isbn = book_data['id']
+                title = book_data['titol']
+                author = book_data['autor']
+                category = book_data['categoria']
+                publication_year = book_data['any_publicacio']
+
+                categories = []
+                if category:
+                    categories = category.split(',')
+
+                cover_image = f"cover{book_isbn}.jpg"
+                cover_url = f"/covers/{cover_image}" if os.path.exists(os.path.join('data/covers', cover_image)) else None
+
+                description = text_collection.find_one({'llibre_id': book_isbn - 1})
+                description_text = description['text'] if description else None
+
+                books.append({
+                    'isbn': book_isbn,
+                    'name': title,
+                    'author': author,
+                    'categories': categories,
+                    'editorial': None,  # Placeholder for editorial
+                    'release_year': publication_year,
+                    'cover': cover_url,
+                    'description': description_text
+                })
+    finally:
+        conn.close()
     return books
 
 # Get Categories
