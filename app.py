@@ -105,14 +105,19 @@ def get_all_categories(books):
 
 # Check lending status of a book
 def get_lending_status(isbn):
+    conn = get_mysql_connection()
     try:
-        with open('data/lendings.txt', 'r', encoding='utf-8') as f:
-            for line in f:
-                fields = line.strip().split(',')
-                if fields[0] == isbn:
-                    return fields[1]
-    except FileNotFoundError:
-        pass
+        with conn.cursor() as cursor:
+            sql = "SELECT usuari_id FROM prestecs WHERE id = %s"
+            cursor.execute(sql, (isbn,))
+            result = cursor.fetchone()
+            if result:
+                user_id = result['usuari_id']
+                user = users.get(user_id)
+                if user:
+                    return user.username
+    finally:
+        conn.close()
     return None
 
 # Lend a book to a user
