@@ -1,12 +1,36 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, send_from_directory
-from werkzeug.security import generate_password_hash, check_password_hash
 from models import User, Admin, Reader
+import pymysql
+from pymongo import MongoClient
+from bson.objectid import ObjectId
+import os
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'
 
+# MySQL Connection
+def get_mysql_connection():
+    return pymysql.connect(
+        host='localhost',
+        port=3306,
+        user='root',
+        password='1234',
+        db='libritxt2',
+        charset='utf8mb4',
+        cursorclass=pymysql.cursors.DictCursor
+    )
+
+# MongoDB Connection
+mongo_client = MongoClient('mongodb://localhost:27016/')
+mongo_db = mongo_client['biblioteca']
+coments_collection = mongo_db['comentaris']
+historial_collection = mongo_db['historial_prestecs']
+images_collection = mongo_db['imatges']
+text_collection = mongo_db['text_llibre']
+
 def load_users():
     users = {}
+    conn = get_mysql_connection()
     try:
         with open('data/users.txt', 'r', encoding='utf-8') as f:
             for line in f:
@@ -14,11 +38,11 @@ def load_users():
                 if len(fields) == 3:
                     username, password, role = fields
                     user_id = username
-                    password_hash = generate_password_hash(password)
+                    password
                     if role == 'admin':
-                        user = Admin(user_id, username, password_hash)
+                        user = Admin(user_id, username, password)
                     else:
-                        user = Reader(user_id, username, password_hash)
+                        user = Reader(user_id, username, password)
                     users[username] = user
     except FileNotFoundError:
         print("users.txt not found; no users loaded.")

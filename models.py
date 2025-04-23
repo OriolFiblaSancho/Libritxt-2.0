@@ -1,5 +1,3 @@
-from werkzeug.security import check_password_hash
-
 # Classe per als llibres
 class Book:
     def __init__(self, title, author, categories, isbn, language, release_year, cover):
@@ -42,10 +40,10 @@ class Book:
 
 # Classe pare dels usuaris    
 class User:
-    def __init__(self, id, name, password_hash, role):
+    def __init__(self, id, name, password, role):
         self._id = id
         self._name = name
-        self._password_hash = password_hash
+        self._password = password
         self._role = role
 
     @property
@@ -57,15 +55,16 @@ class User:
         return self._name
 
     @property
-    def password_hash(self):
-        return self._password_hash
+    def password(self):
+        return self._password
 
     @property
     def role(self):
         return self._role
     
-    def check_password(self, password):
-        return check_password_hash(self._password_hash, password)
+    def check_password(self, password_form):
+        if password_form == self._password: return True
+        else: return False
 
 class Admin(User):
     def __init__(self, id, name, password_hash):
@@ -174,3 +173,4 @@ class Loan:
     @return_date.setter
     def return_date(self, value):
         self._return_date = value
+    
