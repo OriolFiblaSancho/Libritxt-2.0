@@ -232,55 +232,78 @@ def logout():
     return redirect(url_for('index'))
 
 def get_book_by_isbn(isbn):
-    with open('data/books.txt', 'r', encoding='utf-8') as f:
-        for line in f:
-            fields = line.strip().split('|')
-            if len(fields) == 8 and fields[0] == isbn:
-                categories = fields[3].split(',') if fields[3] else []
-                return {
-                    'isbn': fields[0],
-                    'name': fields[1],
-                    'author': fields[2],
-                    'categories': categories,
-                    'editorial': fields[4],
-                    'release_year': fields[5],
-                    'cover': fields[6],
-                    'description': fields[7]
-                }
-    return None
+    conn = get_mysql_connection()
+    try:
+        with conn.cursor() as cursor:
+            sql = "SELECT id, titol, autor, categoria, any_publicacio FROM llibres WHERE id = %s"
+            cursor.execute(sql, (isbn,))
+            book_data = cursor.fetchone()
+            
+            if not book_data:
+                return None
+                
+            book_isbn = book_data['id']
+            title = book_data['titol']
+            author = book_data['autor']
+            category = book_data['categoria']
+            publication_year = book_data['any_publicacio']
+            
+            categories = []
+            if category:
+                categories = category.split(',')
+                
+            cover_image = f"cover{book_isbn}.jpg"
+            cover_url = f"{cover_image}"
+            description = text_collection.find_one({'llibre_id': int(book_isbn) - 1})
+            description_text = description['text'] if description else None
+            
+            return {
+                'isbn': book_isbn,
+                'name': title,
+                'author': author,
+                'categories': categories,
+                'editorial': None,  # Placeholder for editorial
+                'release_year': publication_year,
+                'cover': cover_url,
+                'description': description_text
+            }
+    except pymysql.MySQLError as e:
+        print(f"Error fetching book details: {e}")
+        return None
+    finally:
+        conn.close()
 
 def get_reviews_by_isbn(isbn):
     reviews = []
     try:
-        with open('data/reviews.txt', 'r', encoding='utf-8') as f:
-            for line in f:
-                fields = line.strip().split('|')
-                if fields[0] == isbn:
-                    review_type = fields[1]
-                    if review_type == 'numeric':
-                        reviews.append({
-                            'type': 'numeric',
-                            'user': fields[2],
-                            'timestamp': fields[3],
-                            'rating': int(fields[4])
-                        })
-                    elif review_type == 'comment':
-                        reviews.append({
-                            'type': 'comment',
-                            'user': fields[2],
-                            'timestamp': fields[3],
-                            'comment': fields[4]
-                        })
-                    elif review_type == 'recommendation':
-                        recommendation = fields[4].lower() == 'yes'
-                        reviews.append({
-                            'type': 'recommendation',
-                            'user': fields[2],
-                            'timestamp': fields[3],
-                            'recommendation': recommendation
-                        })
-    except FileNotFoundError:
-        pass
+        # Query the MongoDB collection for reviews with matching llibre_id
+        # Note: Convert isbn to integer since the llibre_id in MongoDB is stored as integer
+        book_reviews = coments_collection.find_one({'llibre_id': int(isbn) - 1})
+        
+        if book_reviews:
+            # Process numeric ratings
+            if 'ressenyes' in book_reviews:
+                for review in book_reviews['ressenyes']:
+                    reviews.append({
+                        'type': 'numeric' if review['tipus'] == 'numeric' else 'comment',
+                        'user': review['usuari'],
+                        'timestamp': review['data'],
+                        'rating': review.get('estrelles') if review['tipus'] == 'numeric' else None,
+                        'comment': review.get('text') if review['tipus'] == 'comment' else None
+                    })
+            
+            # Process recommendations
+            if 'recomanacions' in book_reviews:
+                for recom in book_reviews['recomanacions']:
+                    reviews.append({
+                        'type': 'recommendation',
+                        'user': recom['usuari'],
+                        'timestamp': recom['data'],
+                        'recommendation': recom['recomanat']
+                    })
+    except Exception as e:
+        print(f"Error retrieving reviews from MongoDB: {e}")
+    
     return reviews
 
 @app.route('/book/<isbn>')
