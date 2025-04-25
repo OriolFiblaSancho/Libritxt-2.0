@@ -32,7 +32,7 @@ def load_users():
     conn = get_mysql_connection()
     try:
         with conn.cursor() as cursor:
-            sql = "SELECT id, nom, email, pass, tipus"
+            sql = "SELECT id, nom, email, pass, tipus FROM usuaris"
             cursor.execute(sql)
             results = cursor.fetchall()
             
@@ -60,7 +60,7 @@ def get_all_books():
     conn = get_mysql_connection()
     try:
         with conn.cursor() as cursor:
-            sql = "SELECT id, titol, autor, categoria, any_publicacio"
+            sql = "SELECT id, titol, autor, categoria, any_publicacio FROM llibres"
             cursor.execute(sql)
             results = cursor.fetchall()
 
@@ -76,8 +76,7 @@ def get_all_books():
                     categories = category.split(',')
 
                 cover_image = f"cover{book_isbn}.jpg"
-                cover_url = f"/covers/{cover_image}" if os.path.exists(os.path.join('data/covers', cover_image)) else None
-
+                cover_url = f"{cover_image}"
                 description = text_collection.find_one({'llibre_id': book_isbn - 1})
                 description_text = description['text'] if description else None
 
@@ -108,34 +107,74 @@ def get_lending_status(isbn):
     conn = get_mysql_connection()
     try:
         with conn.cursor() as cursor:
-            sql = "SELECT usuari_id FROM prestecs WHERE id = %s"
+            # Join with users table to get username directly
+            sql = """
+                SELECT u.nom as username 
+                FROM prestecs p
+                JOIN usuaris u ON p.usuari_id = u.id
+                WHERE p.llibre_id = %s AND p.data_retorn IS NULL
+            """
             cursor.execute(sql, (isbn,))
             result = cursor.fetchone()
             if result:
-                user_id = result['usuari_id']
-                user = users.get(user_id)
-                if user:
-                    return user.username
+                return result['username']
+    except pymysql.MySQLError as e:
+        print(f"Error checking lending status: {e}")
     finally:
         conn.close()
     return None
 
+## START AQUI ##########################################
 # Lend a book to a user
-def lend_book(isbn, user):
-    with open('data/lendings.txt', 'a', encoding='utf-8') as f:
-        f.write(f"{isbn},{user}\n")
-
-# Return a book (remove from lendings.txt)
-def return_book(isbn):
+def lend_book(isbn, username):
+    conn = get_mysql_connection()
     try:
-        with open('data/lendings.txt', 'r', encoding='utf-8') as f:
-            lines = f.readlines()
-        with open('data/lendings.txt', 'w', encoding='utf-8') as f:
-            for line in lines:
-                if not line.strip().startswith(isbn):
-                    f.write(line)
-    except FileNotFoundError:
-        pass
+        # First get the user_id based on username
+        with conn.cursor() as cursor:
+            sql = "SELECT id FROM usuaris WHERE nom = %s"
+            cursor.execute(sql, (username,))
+            user_result = cursor.fetchone()
+            
+            if not user_result:
+                return False
+            
+            user_id = user_result['id']
+            
+            # Insert the lending record
+            sql = """
+                INSERT INTO prestecs 
+                (llibre_id, usuari_id, data_prestec, data_retorn) 
+                VALUES (%s, %s, NOW(), NULL)
+            """
+            cursor.execute(sql, (isbn, user_id))
+            conn.commit()
+            return True
+    except pymysql.MySQLError as e:
+        print(f"Error lending book: {e}")
+        return False
+    finally:
+        conn.close()
+
+# Return a book
+def return_book(isbn):
+    conn = get_mysql_connection()
+    try:
+        with conn.cursor() as cursor:
+            # Update the return date instead of deleting the record
+            sql = """
+                UPDATE prestecs 
+                SET data_retorn = NOW()
+                WHERE llibre_id = %s AND data_retorn IS NULL
+            """
+            cursor.execute(sql, (isbn,))
+            affected_rows = cursor.rowcount
+            conn.commit()
+            return affected_rows > 0
+    except pymysql.MySQLError as e:
+        print(f"Error returning book: {e}")
+        return False
+    finally:
+        conn.close()
 
 @app.route('/')
 def index():
