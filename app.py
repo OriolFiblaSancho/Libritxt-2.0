@@ -160,18 +160,62 @@ def return_book(isbn):
     conn = get_mysql_connection()
     try:
         with conn.cursor() as cursor:
-            # Update the return date instead of deleting the record
+            # First get the lending details before deleting
             sql = """
-                UPDATE prestecs 
-                SET data_retorn = NOW()
+                SELECT usuari_id, llibre_id, data_prestec, NOW() as data_retorn
+                FROM prestecs 
                 WHERE llibre_id = %s AND data_retorn IS NULL
             """
             cursor.execute(sql, (isbn,))
-            affected_rows = cursor.rowcount
+            prestec = cursor.fetchone()
+            
+            if not prestec:
+                return False
+                
+            # Get the lending data
+            usuari_id = prestec['usuari_id']
+            llibre_id = prestec['llibre_id']
+            data_prestec = prestec['data_prestec'].strftime("%Y-%m-%d")
+            data_retorn = prestec['data_retorn'].strftime("%Y-%m-%d")
+            
+            # Delete the record from MySQL
+            sql = "DELETE FROM prestecs WHERE llibre_id = %s AND data_retorn IS NULL"
+            cursor.execute(sql, (isbn,))
             conn.commit()
-            return affected_rows > 0
+            
+            # Add to MongoDB historial_prestecs
+            # First check if user exists in the historial collection
+            historial_entry = historial_collection.find_one({"usuari_id": usuari_id})
+            
+            if historial_entry:
+                # User exists, add to their historial array
+                historial_collection.update_one(
+                    {"usuari_id": usuari_id},
+                    {"$push": {"historial": {
+                        "llibre_id": llibre_id,
+                        "data_prestec": data_prestec,
+                        "data_retorn": data_retorn
+                    }}}
+                )
+            else:
+                # User doesn't exist, create new entry
+                historial_collection.insert_one({
+                    "usuari_id": usuari_id,
+                    "historial": [
+                        {
+                            "llibre_id": llibre_id,
+                            "data_prestec": data_prestec,
+                            "data_retorn": data_retorn
+                        }
+                    ]
+                })
+            
+            return True
     except pymysql.MySQLError as e:
         print(f"Error returning book: {e}")
+        return False
+    except Exception as e:
+        print(f"Error updating loan history: {e}")
         return False
     finally:
         conn.close()
