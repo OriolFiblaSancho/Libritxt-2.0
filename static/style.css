@@ -375,6 +375,7 @@ h3{
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
+    perspective: 10000px; /* Add perspective for 3D effect */
 }
 
 .book-item {
@@ -383,16 +384,25 @@ h3{
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
-    transition: transform 0.2s;
+    transition: all 0.2s ease;
+    transform-style: preserve-3d; /* Enable 3D transformations */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .book-item:hover {
-    transform: scale(1.05);
+    transform: translateZ(20px) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
+                5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Parallax effect for mouse movement */
 .book-item a {
     text-decoration: none;
     color: inherit;
+    display: block;
+    position: relative;
+    z-index: 1;
 }
 
 .book-item .book-cover {
@@ -403,15 +413,50 @@ h3{
     border-radius: 5px;
 }
 
+
 .book-item h3 {
     font-size: 16px;
     margin: 10px 0 5px;
     color: #333;
+    transform: translateZ(15px);
+    transition: transform 0.3s ease;
+    position: relative;
 }
 
 .book-item .author {
     font-size: 14px;
     color: #555;
+    transform: translateZ(5px);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.book-item:hover h3 {
+    transform: translateZ(25px);
+}
+
+.book-item:hover .author {
+    transform: translateZ(15px);
+}
+
+/* Add a subtle glow effect on hover */
+.book-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 120, 255, 0);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.book-item:hover::after {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(0, 120, 255, 0.2);
 }
 
 .borrow-btn:disabled {
@@ -488,9 +533,6 @@ h3{
     margin-left: 22px;
     margin-top: 25px;
 }
-
-
-
 
 /* Responsive design */
 @media (max-width: 768px) {

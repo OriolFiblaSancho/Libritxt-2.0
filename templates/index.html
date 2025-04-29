@@ -4,7 +4,17 @@
 
 {% block content %}
     <section id="cataleg">
-        <div class="catalog-container">    
+        <div class="catalog-container">
+            <div class="sidebar">
+                <h3 class="h3_categories">Categories</h3>
+                <ul class="category-list">
+                    {% for category in categories %}
+                        <li class="{% if category == selected_category %}active{% endif %}">
+                            <a href="{{ url_for('index', category=category) }}">{{ category }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>    
             <!-- Catàleg de llibres -->
             <div class="main-content">
                 <h3 id="h3_cataleg">Catàleg de Llibres</h3>
