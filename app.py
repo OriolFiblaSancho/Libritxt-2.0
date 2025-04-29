@@ -124,7 +124,6 @@ def get_lending_status(isbn):
         conn.close()
     return None
 
-## START AQUI ##########################################
 # Lend a book to a user
 def lend_book(isbn, username):
     conn = get_mysql_connection()
