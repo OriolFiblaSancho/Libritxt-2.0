@@ -541,7 +541,7 @@ h3{
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: sticky;
-    top: 20px; /* Adjust as needed */
+    top: 1px; /* Adjust as needed */
     max-width: 300px; /* Set a max width for the sidebar */
     flex: 0 0 300px; /* Flex property to ensure it doesn't shrink */
     height: fit-content;
