@@ -267,6 +267,16 @@ def login():
     
     return render_template('login.html')
 
+@app.route('/forYou', methods=['GET', 'POST'])
+def for_you():
+    if 'usuari' not in session:
+        flash('Cal iniciar sessió per accedir a aquesta pàgina.', 'error')
+        return redirect(url_for('login'))
+    
+    books = get_all_books()
+    all_categories = get_all_categories(books)
+    return render_template('forYou.html', usuari=session['usuari'], all_categories=all_categories)
+
 @app.route('/logout')
 def logout():
     session.pop('usuari', None)

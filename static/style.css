@@ -541,10 +541,33 @@ h3{
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: sticky;
-    top: 1px; /* Adjust as needed */
+    top: 20px; /* Adjust as needed */
     max-width: 300px; /* Set a max width for the sidebar */
     flex: 0 0 300px; /* Flex property to ensure it doesn't shrink */
     height: fit-content;
+    max-height: 90vh; /* Limitar la altura máxima del sidebar */
+    overflow-y: auto; /* Añadir scroll vertical cuando sea necesario */
+    margin-top: 20px; /* Espacio superior */
+    margin-left: 10px;
+}
+
+/* Estilo para la barra de desplazamiento del sidebar */
+.sidebar::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color del fondo de la barra */
+    border-radius: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #888; /* Color del "pulgar" de la barra */
+    border-radius: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color al pasar el cursor sobre la barra */
 }
 
 .sidebar h3 {

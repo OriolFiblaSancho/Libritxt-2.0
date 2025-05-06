@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Catàleg de Llibres{% endblock %}
+
+{% block content %}
+<section id="cataleg">
+    <div class="catalog-container">
+        <div class="sidebar">
+            <h3>Categories</h3>
+            <ul class="category-list">
+                {% for category in all_categories %}
+                    <li class="{% if category == selected_category %}active{% endif %}">
+                        <a href="{{ url_for('index', category=category) }}">{{ category }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <h3 id="h3_cataleg"> Para ti </h3>
+        </div>
+        
+    </div>
+</section>
+
+{% endblock %}
