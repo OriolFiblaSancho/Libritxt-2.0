@@ -36,6 +36,9 @@
                 <li><a href="{{ url_for('index') }}">Inici</a></li>
                 <li><a href="#cataleg">Catàleg</a></li>
                 <li><a href="{{ url_for('contacte') }}">Contacte</a></li>
+                {% if session.get('role') == 'admin' %}
+                <li><a href="{{ url_for('add_book') }}">Afegir Llibre</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>

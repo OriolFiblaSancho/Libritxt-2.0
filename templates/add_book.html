@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Afegir Llibre{% endblock %}
+
+{% block content %}
+<section id="add-book">
+    <div class="form-container">
+        <h2>Afegir un Nou Llibre</h2>
+        <form method="POST" action="{{ url_for('add_book') }}" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="titol">Títol:</label>
+                <input type="text" id="titol" name="titol" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="autor">Autor:</label>
+                <input type="text" id="autor" name="autor" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="categoria">Categories (separades per comes):</label>
+                <input type="text" id="categoria" name="categoria" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="any_publicacio">Any de Publicació:</label>
+                <input type="number" id="any_publicacio" name="any_publicacio" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="descripcio">Descripció:</label>
+                <textarea id="descripcio" name="descripcio" rows="5" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="cover">Portada (imatge):</label>
+                <input type="file" id="cover" name="cover" accept="image/jpeg, image/png" required>
+            </div>
+            
+            <button type="submit" class="btn-submit">Afegir Llibre</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

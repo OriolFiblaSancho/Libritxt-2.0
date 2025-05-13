@@ -43,7 +43,7 @@ def load_users():
                 password = user_data['pass']
                 role = user_data['tipus']
                 
-                if role == 'admin':
+                if role == 'Admin':
                     user = Admin(user_id, username, password)
                 else:
                     user = Reader(user_id, username, password)
@@ -425,6 +425,112 @@ def contacte():
     if 'usuari' in session:
         return render_template('contacte.html', usuari=session['usuari'])
     return render_template('contacte.html')
+
+@app.route('/add_book', methods=['GET', 'POST'])
+def add_book():
+    # Check if user is logged in and is an admin
+    if 'usuari' not in session:
+        flash('Cal iniciar sessió per accedir a aquesta pàgina.', 'error')
+        return redirect(url_for('login'))
+    
+    if session.get('role') != 'admin':
+        flash('No tens permisos per accedir a aquesta pàgina.', 'error')
+        return redirect(url_for('index'))
+    
+    if request.method == 'POST':
+        # Get form data
+        titol = request.form['titol']
+        autor = request.form['autor']
+        categoria = request.form['categoria']
+        any_publicacio = request.form['any_publicacio']
+        descripcio = request.form['descripcio']
+        
+        # Handle file upload
+        cover_file = request.files['cover']
+        
+        conn = get_mysql_connection()
+        try:
+            # Insert new book into MySQL database
+            with conn.cursor() as cursor:
+                # First, find the maximum book ID to determine the new book ID
+                sql = "SELECT MAX(id) as max_id FROM llibres"
+                cursor.execute(sql)
+                result = cursor.fetchone()
+                new_id = 1
+                if result and result['max_id']:
+                    new_id = result['max_id'] + 1
+                
+                # Insert the new book
+                sql = """
+                    INSERT INTO llibres 
+                    (id, titol, autor, categoria, any_publicacio) 
+                    VALUES (%s, %s, %s, %s, %s)
+                """
+                cursor.execute(sql, (new_id, titol, autor, categoria, any_publicacio))
+                
+                # Insert book description into MongoDB
+                text_collection.insert_one({
+                    'llibre_id': new_id - 1,  # Adjust index for MongoDB (starting from 0)
+                    'text': descripcio
+                })
+                
+                # Save cover image
+                if cover_file and cover_file.filename:
+                    # Make sure the covers directory exists
+                    cover_path = os.path.join('data', 'covers')
+                    if not os.path.exists(cover_path):
+                        os.makedirs(cover_path)
+                    
+                    # Save the file with the correct name format
+                    cover_filename = f"cover{new_id}.jpg"
+                    cover_file.save(os.path.join(cover_path, cover_filename))
+                
+                conn.commit()
+                flash('Llibre afegit amb èxit!', 'success')
+                return redirect(url_for('book_details', isbn=new_id))
+        except Exception as e:
+            print(f"Error adding book: {e}")
+            flash('Hi ha hagut un error afegint el llibre. Si us plau, torna a provar-ho.', 'error')
+        finally:
+            conn.close()
+    
+    return render_template('add_book.html', usuari=session['usuari'])
+
+@app.route('/register', methods=['GET','POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        email = request.form['email']
+        role = request.form['role']
+
+        if username in users:
+            flash('Aquest nom d\'usuari ja està en ús.', 'error')
+            return redirect(url_for('login'))
+        if role == 'admin':
+            tipus = 1
+        else:
+            tipus = 0
+        # Insert new user into MySQL database
+        conn = get_mysql_connection()
+        try:
+            with conn.cursor() as cursor:
+                sql = """
+                    INSERT INTO usuaris (nom, email, pass, tipus) 
+                    VALUES (%s, %s, %s, %s)
+                """
+                cursor.execute(sql, (username, email, password, tipus))
+                conn.commit()
+                flash('Usuari registrat amb èxit!', 'success')
+                return redirect(url_for('login'))
+        except Exception as e:
+            print(f"Error registering user: {e}")
+            flash('Hi ha hagut un error registrant l\'usuari. Si us plau, torna a provar-ho.', 'error')
+            return redirect(url_for('login'))
+        finally:
+            conn.close()
+    
+    return render_template('register.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5500)
